@@ -11,6 +11,15 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  maiores, nihil nostrum praesentium qui quis rem rerum suscipit, ullam.</p>
             </div>
         </div>
+        <div class="posts">
+            @foreach($posts as $el)
+                <div class="post">
+                    <h2>{{$el->title}}</h2>
+                    <p>{{$el->anons}}</p>
+                    <p><a href="{{route('posts.one',$el->id)}}">Детальнее</a></p>
+                </div>
+            @endforeach
+        </div>
         @include('includes.aside')
     </div>
 @endsection
